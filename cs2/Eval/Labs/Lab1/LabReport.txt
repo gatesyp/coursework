@@ -1,0 +1,72 @@
+3460:210-010
+ Lab 1  Report
+
+Name:     
+UANET id: ig11
+
+Generated: Mon Sep 21 22:42:04 EDT 2015
+
+hello world
+
+Note:  First column is revision number when that line was last changed.
+
+------------ ig11/Labs/Lab1/hello.hpp ------------
+#ifndef HELLO_HPP
+#define HELLO_HPP
+
+
+
+void hello();
+
+
+
+
+#endif
+
+------------ ig11/Labs/Lab1/hello.cpp ------------
+#include <iostream>
+#include "hello.hpp"
+
+void hello() {
+  std::cout << "hello world\n";
+}
+
+------------ ig11/Labs/Lab1/CMakeLists.txt ------------
+project(Lab1 CXX)
+cmake_minimum_required(VERSION 2.8.11)
+
+set(CMAKE_CXX_FLAGS "-std=c++11")
+
+add_executable(lab1
+	hello.cpp
+	main.cpp)
+
+------------ ig11/Labs/Lab1/main.cpp ------------
+/********************************************************************
+  * Lab 1: Hello World
+  *
+  * Author: Your Name
+  *       ig11.uakron.edu
+  *
+  * Purpose: Setting up your accounts
+  *
+  *******************************************************************/
+#include "hello.hpp"
+int main()
+{
+hello();
+}
+
+------------------------------------------------------------------------
+r43 | ig11 | 2015-09-15 16:01:13 -0400 (Tue, 15 Sep 2015) | 1 line
+
+this was my first hellow world program
+------------------------------------------------------------------------
+r14 | hvn1 | 2015-09-11 09:55:56 -0400 (Fri, 11 Sep 2015) | 1 line
+
+Update Lab1 for section 010
+------------------------------------------------------------------------
+r8 | aed27 | 2015-09-07 17:18:18 -0400 (Mon, 07 Sep 2015) | 1 line
+
+pushed Lab 1 to 010
+------------------------------------------------------------------------

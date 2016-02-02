@@ -1,0 +1,102 @@
+3460:210-010
+ Lab 3  Report
+
+Name:     
+UANET id: ig11
+
+Generated: Fri Oct  9 10:39:32 EDT 2015
+
+
+Note:  First column is revision number when that line was last changed.
+
+------------ ig11/Labs/Lab3/string.cpp ------------
+/*
+Lab 3: make your own string class string.cpp
+Author: Istvan Gates
+	Ig11@zips.uakron.edu
+
+Purpose: make my own string class with constructor and deconstructor
+
+*/ 
+#include <iostream>
+#include "string.hpp"
+
+------------ ig11/Labs/Lab3/CMakeLists.txt ------------
+project(Lab3 CXX)
+cmake_minimum_required(VERSION 2.8.11)
+
+set(CMAKE_CXX_FLAGS "-std=c++11")
+
+add_executable(lab3
+	string.cpp
+	main.cpp)
+
+------------ ig11/Labs/Lab3/string.hpp ------------
+/* 
+Lab 3: Make your own string class   string.hpp
+Author: Istvan Gates
+	ig11@zips.uakron.edu
+
+Purpose: make my own string class with constructor and deconstructor
+*/
+#ifndef STRING_HPP
+#define STRING_HPP
+#include <string.h>
+
+using namespace std;
+
+//create the STring class
+class String{
+	int len;
+	char* str;
+
+	public:
+//default constructor for String
+	String()
+	:len(0), str(nullptr)
+	{}
+
+//copy constructor for String. copies the length of existing char array, dynamicall allocates memory for the new string
+	String(String const& s)
+	:len(s.len), str(new char[len+1])
+	{
+		strcpy(str, s.str);
+	}
+
+//c-string constructor. copies length and contents, then dynamically allocates memory for new c string array
+
+	String(char const* s)
+	:len(strlen(s)), str(new char[len + 1])
+	{
+		strcpy(str, s);
+	}
+
+//deconstructor to free up dynamically allocated memory
+	~ String(){
+	delete[] str;
+	}
+};
+
+#endif
+
+------------ ig11/Labs/Lab3/main.cpp ------------
+/*
+Lab 3: Make Your Own String Class main.cpp
+Author: Istvan Gates
+	ig11@zips.uakron.edu
+
+Purpose: make my own string class with constructor and deconstructor
+*/
+#include "string.hpp"
+
+int main(){
+	String s1;
+	String s2 = "test";
+	String s3 = s2;
+
+}
+------------------------------------------------------------------------
+r617 | ig11 | 2015-10-06 16:14:37 -0400 (Tue, 06 Oct 2015) | 1 line
+
+this is my last commit for lab3
+------------------------------------------------------------------------

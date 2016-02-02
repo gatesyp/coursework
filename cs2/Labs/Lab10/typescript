@@ -1,0 +1,185 @@
+Script started on Sat 05 Dec 2015 06:18:38 PM PST
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ gcc -g -o hello hello.c
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ gcc -g -o hello hello.c[C[C[C[C[C[C[C[1P[1P[C[1P[1P[1P hello.c[1Phello.c[1Pello.c[1Pllo.c[C[1Po.c[1Po.c[1P.ce.cx.c1.c .ce.cx.c1.c
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ gcc -g -o ex1 ex1.c[1P[1P[1P[1P ex1.c[C ex1.cs ex1.ce ex1.cg ex1.cf ex1.ca ex1.cu ex1.cl ex1.ct ex1.c[C[1Px1.c[1P1.c[1P.ce.cx.c2.c
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ gcc -g -o segfault ex2.c[1P.c3.c[1P[1P[1P[1P[1P[1P[1P[1P ex3.cm ex3.ce ex3.cm ex3.co ex3.cr ex3.cy ex3.c
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ gcc -g -o memory ex3.c[Kg[Kls
+[0m[01;32mex1[0m  ex1.c  ex2.c  ex3.c  [01;32mhello[0m  hello.c  [01;32mmemory[0m  [01;32msegfault[0m  typescript
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ gdb hello
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from hello...done.
+(gdb) r
+Starting program: /home/gatesyp/Desktop/ig11/Labs/Lab10/hello 
+Hello, World!
+[Inferior 1 (process 3649) exited normally]
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) quit
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ ./ex1 
+The value of j is: 2
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ gdb ex1
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ex1...done.
+(gdb) b main
+Breakpoint 1 at 0x8048426: file ex1.c, line 8.
+(gdb) r
+Starting program: /home/gatesyp/Desktop/ig11/Labs/Lab10/ex1 
+
+Breakpoint 1, main (argc=1, argv=0xbffff0a4) at ex1.c:8
+8	        int i, j = 0;  
+(gdb) n
+9	        for (i = 0; i < 100; i++); /* <-- unwanted semicolon */  
+(gdb) n
+10	                j += 2;  
+(gdb) p i
+$1 = 100
+(gdb) p j
+$2 = 0
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 3672] will be killed.
+
+Quit anyway? (y or n) y
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ gdb segfault
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from segfault...done.
+(gdb) r
+Starting program: /home/gatesyp/Desktop/ig11/Labs/Lab10/segfault 
+
+Program received signal SIGSEGV, Segmentation fault.
+0x08048403 in main (argc=1, argv=0xbffff094) at ex2.c:16
+16	        a1[0] = 1;  
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 3690] will be killed.
+
+Quit anyway? (y or n) y
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ gdb memory
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from memory...done.
+(gdb) r[Kl
+18	{  
+19	        printf("Name: %s, Age: %d, Weight: %d\n",  
+20	                fp->name, fp->age, fp->weight);  
+21	}  
+22	 
+23	int main(int argc, char *argv[])  
+24	{  
+25	        struct foo *foop;  
+26	 
+27	        foop = (struct foo *) &memory[0];  
+(gdb) l
+28	 
+29	        strcpy(foop->name, "Greg");  
+30	        foop->age = 29;  
+31	        foop->weight = 150;  
+32	 
+33	        foop = (struct foo *) &memory[(sizeof(struct foo))];  
+34	 
+35	        strcpy(foop->name, "Tony");  
+36	        foop->age = 20;  
+37	        foop->weight = 200;  
+(gdb) l
+38	 
+39	        print_foo((struct foo *) &memory[0]);  
+40	        print_foo((struct foo *) &memory[(sizeof(struct foo))]);  
+41	 
+42	        return 0;  
+43	}
+44	
+(gdb) b 36
+Breakpoint 1 at 0x8048497: file ex3.c, line 36.
+(gdb) r
+Starting program: /home/gatesyp/Desktop/ig11/Labs/Lab10/memory 
+
+Breakpoint 1, main (argc=1, argv=0xbffff094) at ex3.c:36
+36	        foop->age = 20;  
+(gdb) print *((struct foo*) %[K&memory[0])
+$1 = {name = "Greg", '\000' <repeats 27 times>, age = 29, weight = 150}
+(gdb) print *((struct foo*) &memory[0])[1P[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[1P[1P[1P[1P &memory[0])[1P&memory[0])[1Pmemory[0])[1Pemory[0])[1Pmory[0])[1Pory[0])[1Pry[0])[1Py[0])[1P[0])[1P0])[1P])[1P)[Kdixre[K[K[K[K[Ksiez[K[Kzeof(struct foo)
+$2 = 40
+(gdb) print *((furst c[K[K[K[K[K[K[Kstruct foo*) &memory[40])
+$3 = {name = "Tony", '\000' <repeats 27 times>, age = 0, weight = 0}
+(gdb) print *((struct foo*) &memory[40])[1P0])[1P])3])9])
+$4 = {name = "\000Tony", '\000' <repeats 26 times>, age = 0, weight = 0}
+(gdb) print *((struct foo*) &memory[39])[C[C[C[C[C[C[C[C[C[C[1P])
+$5 = {name = "g", '\000' <repeats 28 times>, "\035\000", age = 38400, 
+  weight = 1852789760}
+(gdb) x/100c memory
+0x804a040 <memory>:	71 'G'	114 'r'	101 'e'	103 'g'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+0x804a048 <memory+8>:	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+0x804a050 <memory+16>:	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+0x804a058 <memory+24>:	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+0x804a060 <memory+32>:	29 '\035'	0 '\000'	0 '\000'	0 '\000'	-106 '\226'	0 '\000'	0 '\000'	0 '\000'
+0x804a068 <memory+40>:	84 'T'	111 'o'	110 'n'	121 'y'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+0x804a070 <memory+48>:	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+0x804a078 <memory+56>:	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+0x804a080 <memory+64>:	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+0x804a088 <memory+72>:	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+0x804a090 <memory+80>:	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+0x804a098 <memory+88>:	0 '\000'	0 '\000'	0 '\000'	0 '\000'---Type <return> to continue, or q <return> to quit---q
+Quit
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 3702] will be killed.
+
+Quit anyway? (y or n) y
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ ls
+[0m[01;32mex1[0m  ex1.c  ex2.c  ex3.c  [01;32mhello[0m  hello.c  [01;32mmemory[0m  [01;32msegfault[0m  typescript
+]0;gatesyp@ubuntu: ~/Desktop/ig11/Labs/Lab10gatesyp@ubuntu:~/Desktop/ig11/Labs/Lab10$ exit
+Script done on Sat 05 Dec 2015 06:35:16 PM PST

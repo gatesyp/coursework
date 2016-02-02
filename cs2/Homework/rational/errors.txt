@@ -1,0 +1,13 @@
+Evaluation for ig11
+----------------------
+### Running cmake ###
+### Running make ###
+Scanning dependencies of target rcalc
+[ 33%] Building CXX object CMakeFiles/rcalc.dir/main.cpp.o
+[ 66%] Building CXX object CMakeFiles/rcalc.dir/rational.cpp.o
+/home/faculty/asutton/Code/teaching/cs210fa15/010/students/ig11/Homework/rational/rational.cpp:30:13: error: expected constructor, destructor, or type conversion before ‘(’ token
+    Rational (Rational const &r) : num(r.num), den(r.den) {
+             ^
+make[2]: *** [CMakeFiles/rcalc.dir/rational.cpp.o] Error 1
+make[1]: *** [CMakeFiles/rcalc.dir/all] Error 2
+make: *** [all] Error 2

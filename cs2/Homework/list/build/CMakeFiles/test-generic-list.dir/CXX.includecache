@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gatesyp/Desktop/ig11/Homework/list/list.cpp
+list.hpp
+/home/gatesyp/Desktop/ig11/Homework/list/list.hpp
+
+/home/gatesyp/Desktop/ig11/Homework/list/list.hpp
+list
+-
+cassert
+-
+iostream
+-
+
+/home/gatesyp/Desktop/ig11/Homework/list/main.cpp
+test.hpp
+/home/gatesyp/Desktop/ig11/Homework/list/test.hpp
+
+/home/gatesyp/Desktop/ig11/Homework/list/test.cpp
+test.hpp
+/home/gatesyp/Desktop/ig11/Homework/list/test.hpp
+string
+-
+iostream
+-
+
+/home/gatesyp/Desktop/ig11/Homework/list/test.hpp
+list.hpp
+/home/gatesyp/Desktop/ig11/Homework/list/list.hpp
+iostream
+-
+
