@@ -12,11 +12,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 global eps;     % Declare epsilon as global.
-eps = 1;     % Set the value of epsilon.
+eps = 1.9;     % Set the value of epsilon.
 
 init = [0 eps];   % Set the initial condition of the ODE.
 
-t = [0 5];     % Define the time interval over which solution will be computed.
+t = [0 200000000];     % Define the time interval over which solution will be computed.
                   % You may need to change the right end point to see the long-term
                   % behavior of the solution, depending on epsilon.
 
