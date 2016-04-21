@@ -10,13 +10,14 @@
 % the matlab function file 'rhs_projectileB.m'. 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+hold on
 
 global eps;
 global l;
-l = 4;          % Declare epsilon as global.
+l = 1000;          % Declare epsilon as global.
 eps = 0;     % Set the value of epsilon.
 
-init = [0 100];   % Set the initial condition of the ODE.
+init = [0 50];   % Set the initial condition of the ODE.
 
 t = [0 50];     % Define the time interval over which solution will be computed.  
                   % You may need to change the right end point to see the long-term
@@ -31,7 +32,7 @@ options = odeset('RelTol',1e-8, 'AbsTol',1e-8);
 %hold on 
 
 % for loop goes here
-
+% for 
 %hold odd
 % Plot the solution. 
 
@@ -42,7 +43,7 @@ plot(Y(:,1),Y(:,2))
 
 title('level curves')
 
-
+hold off
 %% velocity
 %subplot(2,1,2)
 %set(gca,'FontSize',24)
