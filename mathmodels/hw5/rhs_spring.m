@@ -7,4 +7,4 @@ dy = zeros(2,1);
 
 dy(1) = y(2);
 
-dy(2) = -(sqrt(y.^2 +1) - l) * y/(sqrt(y.^2 + 1)) - (eps*dy(1)); 
+dy(2) = -(sqrt(y(1).^2 +1) - l) * y(1)/(sqrt(y(1).^2 + 1)) - (eps*y(2)); 

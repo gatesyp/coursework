@@ -13,12 +13,12 @@
 
 global eps;
 global l;
-l = 0;          % Declare epsilon as global.
+l = 4;          % Declare epsilon as global.
 eps = 0;     % Set the value of epsilon.
 
-init = [0 eps];   % Set the initial condition of the ODE.
+init = [0 100];   % Set the initial condition of the ODE.
 
-t = [0 5];     % Define the time interval over which solution will be computed.  
+t = [0 50];     % Define the time interval over which solution will be computed.  
                   % You may need to change the right end point to see the long-term
                   % behavior of the solution, depending on epsilon. 
 
@@ -28,16 +28,19 @@ options = odeset('RelTol',1e-8, 'AbsTol',1e-8);
 
 % Numerically solve the equation.  See 'ode45' in matlab help for more info on this commmand. 
 [T,Y] = ode45(@rhs_spring,t,init,options);
+%hold on 
 
+% for loop goes here
 
+%hold odd
 % Plot the solution. 
 
 % position
 subplot(2,1,1)
 set(gca,'FontSize',24)
 plot(Y(:,1),Y(:,2))   
+
 title('level curves')
-%ylim([0,1.2])
 
 
 %% velocity
