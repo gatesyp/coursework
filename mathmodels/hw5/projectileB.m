@@ -14,7 +14,7 @@ hold on
 
 global eps;
 global l;
-l = 1;          % Declare epsilon as global.
+l = 20;          % Declare epsilon as global.
 eps = 0;     % Set the value of epsilon.
 
 init = [0 20];   % Set the initial condition of the ODE.
