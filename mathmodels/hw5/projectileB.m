@@ -14,10 +14,10 @@ hold on
 
 global eps;
 global l;
-l = 1000;          % Declare epsilon as global.
+l = 1;          % Declare epsilon as global.
 eps = 0;     % Set the value of epsilon.
 
-init = [0 50];   % Set the initial condition of the ODE.
+init = [0 20];   % Set the initial condition of the ODE.
 
 t = [0 50];     % Define the time interval over which solution will be computed.  
                   % You may need to change the right end point to see the long-term
@@ -41,7 +41,7 @@ subplot(2,1,1)
 set(gca,'FontSize',24)
 plot(Y(:,1),Y(:,2))   
 
-title('level curves')
+title('small l case')
 
 hold off
 %% velocity
