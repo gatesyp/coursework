@@ -1,24 +1,35 @@
 function hw6_b
-% t goes from 0 to 8
-% the initial conditions are 1 and 0
-tspan = [0 5];
-y0 = [50; 50];
-% call ODE solver ”ode45” to solve the system
+% t goes from 0 to 10
+tspan = [0 100];
+% play with the initial conditions?
+% start:increment size:end condition
+for k = -10:10:10
+    for i = -10:10:10
+        y0 = [i; k];
 % determined by f (see the end of the code), tspan
-%and y0
-[t, y] = ode45(@f, tspan, y0);
-% the solutions are returned to variable y
-% y(:, 1) and y(:, 2) are the data for R(t) and J(t)
+% and y0
+        [t, y] = ode45(@f, tspan, y0);
+% y(:, 1nand y(:, 2) are the data for R(t) and J(t)
+        hold on
+        plot(t, y(:, 1), t, y(:, 2));
+% center the plot about origin
+        axis([-20 20 -20 20]);
+    end
+end
+grid on
 hold off
-plot(t, y(:, 1), t, y(:, 2));
-axis([-100 100 -100 100]);
 % add legend
-%legend('Romeo', 'Juliet', 2);
+% legend('Romeo', 'Juliet', 2);
 % set the background color to white
 set(gcf, 'Color', 'w');
 % the system: y(1) is R, y(2) is J
+% change conditions a and b
+% a^2 < b^2 is saddle point
+% problem: i'm only getting the right side of the picture, nothing on left
+% side of the origin
+% a^2 > b^2 is stable node
 function dydt = f(t, y)
-a = 4;
-b = -1;
+a = -1;
+b = 3;
 dydt = [a*y(1) + b*y(2)
 b*y(1) + a*y(2)];
