@@ -1,2 +1,0 @@
-/home/gatesyp/Desktop/ig11/Homework/list/build/CMakeFiles/test-generic-list.dir
-/home/gatesyp/Desktop/ig11/Homework/list/build/CMakeFiles/printout.dir

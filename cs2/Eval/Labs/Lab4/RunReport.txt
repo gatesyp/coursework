@@ -1,4 +1,0 @@
-/home/research/hvn1/cs210fa15/010/students/ig11/Labs/Lab4/main.cpp:26:1: error: stray ‘`’ in program
- b = "three";`
- ^
-/usr/bin/timeout: failed to run command ‘/home/research/hvn1/cs210fa15/010/students/ig11/Labs/Lab4/runlab’: No such file or directory
