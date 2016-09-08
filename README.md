@@ -1,7 +1,5 @@
-# resume
+# Applied Math/Computer Science
+## University of Akron
 
-A version controlled resume as well as my coursework materials. 
+A version controlled version of my coursework.
 
-Click on the .pdf and click 'raw' for a better view. 
-http://www.math.lsa.umich.edu/~pwn/Math462_2008.html#textbook
-http://www.math.uakron.edu/~pwilber/Models/mainPage.html
